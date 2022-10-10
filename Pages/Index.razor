@@ -1,3 +1,29 @@
 ﻿@page "/"
 
 <PageTitle>To-do List</PageTitle>
+
+<h1>Insert to-do item!</h1>
+<EditForm Model="@todoModel" OnValidSubmit="@createTodo">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputText id="todo" @bind-Value="todoModel.Todo" />
+</EditForm>
+
+<ul>
+@for (int i = 0; i < todos.Count; i++){
+    <li>
+        @todos[i]
+    </li>
+}
+</ul>
+
+@code {
+    private TodoModel todoModel = new();
+    private List<string> todos {get; set;} = new();
+    public void createTodo(){
+        Console.WriteLine(todoModel.Todo);
+        todos.Add(todoModel.Todo);
+        todoModel.Todo = "";
+    }
+}

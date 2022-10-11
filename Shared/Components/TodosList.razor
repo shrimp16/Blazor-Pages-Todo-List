@@ -1,0 +1,12 @@
+@namespace TodosList
+
+<ul>
+    @foreach (string str in Todos){
+        <li>@str</li>
+    }
+</ul>
+
+@code {
+    [Parameter]
+    public List<string> Todos { get; set; } = null!;
+}

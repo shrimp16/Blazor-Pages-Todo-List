@@ -1,0 +1,26 @@
+@namespace TodoInput
+
+@inject TodoStorage TodoStorage
+
+<h1>Insert to-do item!</h1>
+<EditForm Model="@todoModel" OnValidSubmit="@createTodo">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputText id="todo" @bind-Value="todoModel.Todo" />
+</EditForm>
+<TodosList.TodosList Todos=@TodoStorage.Todos />
+
+
+@code {
+    private TodoModel todoModel = new();
+    private void createTodo()
+    {
+        if (string.IsNullOrEmpty(todoModel.Todo))
+        {
+            return;
+        }
+        TodoStorage.Todos.Add(todoModel.Todo);
+        todoModel.Todo = "";
+    }
+}

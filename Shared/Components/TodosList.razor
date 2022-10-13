@@ -5,7 +5,7 @@
 <ul>
     @foreach (string str in Todos)
     {
-        <li>@str</li>
+        <Blazor_Pages_Todo_List.Shared.Components.TodoItem Data=@str CardColor="blue" />
     }
 </ul>
 
@@ -13,17 +13,6 @@
     ul {
         width: 45%;
         margin: auto;
-    }
-
-    li {
-        list-style: none;
-        font-size: 115%;
-        text-align: center;
-        border: 2px black solid;
-        border-radius: 25px;
-        padding: 2.5rem;
-        margin-top: 2.5px;
-        margin-bottom: 2.5px;
     }
 </style>
 

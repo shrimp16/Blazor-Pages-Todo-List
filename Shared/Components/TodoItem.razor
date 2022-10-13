@@ -1,0 +1,23 @@
+<li>@Data</li>
+
+<style>
+    li {
+        background-color: @CardColor;
+        list-style: none;
+        font-size: 115%;
+        text-align: center;
+        border: 2px black solid;
+        border-radius: 25px;
+        padding: 2.5rem;
+        margin-top: 2.5px;
+        margin-bottom: 2.5px;
+    }
+</style>
+
+@code {
+    [Parameter]
+    public string CardColor { get; set; }
+
+    [Parameter]
+    public string Data { get; set; }
+}

@@ -2,14 +2,22 @@
 
 @inject TodoStorage TodoStorage
 
-<h1>Insert to-do item!</h1>
-<EditForm Model="@todoModel" OnValidSubmit="@createTodo">
+<EditForm class="form" Model="@todoModel" OnValidSubmit="@createTodo">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
     <InputText id="todo" @bind-Value="todoModel.Todo" />
 </EditForm>
 <TodosList.TodosList Todos=@TodoStorage.Todos />
+
+<style>
+    .form {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin: auto;
+    }
+</style>
 
 
 @code {

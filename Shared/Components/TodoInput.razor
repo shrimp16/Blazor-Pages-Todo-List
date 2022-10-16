@@ -7,6 +7,7 @@
     <ValidationSummary />
 
     <InputText id="todo" @bind-Value="todoModel.Todo" />
+    <button type="submit">Submit!</button>
 </EditForm>
 <TodosList.TodosList Todos=@TodoStorage.Todos />
 
@@ -17,6 +18,28 @@
         width: 50%;
         margin: auto;
     }
+
+    button {
+        height: 3rem;
+        width: 10rem;
+        margin: auto;
+        margin-top: 1rem;
+        border: 2px black solid;
+        border-radius: 5px;
+        outline: none;
+        box-shadow: 0 9px lightgray;
+        background-color: white;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    button:active {
+        color: white;
+        background-color: black;
+        box-shadow: 0 5px gray;
+        transform: translateY(4px);
+    }
+
 </style>
 
 
